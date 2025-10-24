@@ -97,15 +97,27 @@
       color: var(--texto-escuro);
       margin-top: 40px;
     }
+
+    .patrocinadores {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .patrocinadores span {
+      display: inline-block;
+      margin: 0 10px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <nav>
     <h1>Tech Care</h1>
     <ul>
-      <li><a href="/Main/index.html">Home</a></li>
-      <li><a href="/Graphs/graphs.html">Monitoramento</a></li>
-      <li><a href="/Members/members.html">Membros</a></li>
+      <li><a href="../Main/index.html">Home</a></li>
+      <li><a href="../Graphs/graphs.html">Monitoramento</a></li>
+      <li><a href="../Members/members.html">Membros</a></li>
+      <li><a href="../Swot/swot.html">Análise SWOT</a></li>
     </ul>
   </nav>
 
@@ -121,7 +133,14 @@
   <div id="map"></div>
 
   <footer>
-    &copy; 2025 Tech Care — Monitoramento inteligente para crianças com TEA
+    &copy; 2025 Tech Care — Inspirando um futuro mais humano e tecnológico
+    <div class="patrocinadores">
+      <span>Unimed</span>
+      <span>ADACAMP</span>
+      <span>Hospitalhaços</span>
+      <span>CeramTec</span>
+      <span>Indium Corp</span>
+    </div>
   </footer>
 
   <script>
@@ -132,7 +151,7 @@
         labels: ['0min','1min','2min','3min','4min','5min','6min','7min','8min','9min'],
         datasets: [{
           label: 'Frequência Cardíaca (bpm)',
-          data: [85, 90, 95, 100, 110, 120, 115, 105, 95, 90],
+          data: [18, 25, 25, 18, 16, 120, 115, 105, 95, 90],
           borderColor: '#7FB3FF',
           backgroundColor: '#B9FBC0',
           fill: true,
