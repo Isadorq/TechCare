@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulações — Tech Care</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    :root {
+      --azul-suave: #7FB3FF;
+      --amarelo-pastel: #FFE68F;
+      --coral-claro: #FF9F9F;
+      --verde-menta: #B9FBC0;
+      --branco-gelo: #F7F9FA;
+      --texto-escuro: #2D0C57;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--branco-gelo);
+      color: var(--texto-escuro);
+    }
+
+    nav {
+      background-color: var(--azul-suave);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: white;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--coral-claro);
+      margin-top: 40px;
+    }
+
+    .charts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+
+    .chart {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      width: 350px;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    #map {
+      height: 400px;
+      margin: 40px auto;
+      max-width: 900px;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: var(--verde-menta);
+      color: var(--texto-escuro);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Tech Care</h1>
+    <ul>
+      <li><a href="/Main/index.html">Home</a></li>
+      <li><a href="/Graphs/graphs.html">Monitoramento</a></li>
+      <li><a href="/Members/members.html">Membros</a></li>
+    </ul>
+  </nav>
+
+  <h2>Simulações em Tempo Real</h2>
+
+  <div class="charts">
+    <div class="chart"><canvas id="frequenciaChart"></canvas></div>
+    <div class="chart"><canvas id="oxigenacaoChart"></canvas></div>
+    <div class="chart"><canvas id="vibracaoChart"></canvas></div>
+    <div class="chart"><canvas id="pizzaChart"></canvas></div>
+  </div>
+
+  <div id="map"></div>
+
+  <footer>
+    &copy; 2025 Tech Care — Monitoramento inteligente para crianças com TEA
+  </footer>
+
+  <script>
+    // Frequência Cardíaca
+    new Chart(document.getElementById('frequenciaChart'), {
+      type: 'line',
+      data: {
+        labels: ['0min','1min','2min','3min','4min','5min','6min','7min','8min','9min'],
+        datasets: [{
+          label: 'Frequência Cardíaca (bpm)',
+          data: [85, 90, 95, 100, 110, 120, 115, 105, 95, 90],
+          borderColor: '#7FB3FF',
+          backgroundColor: '#B9FBC0',
+          fill: true,
+          tension: 0.3
+        }]
+      }
+    });
+
+    // Oxigenação
+    new Chart(document.getElementById('oxigenacaoChart'), {
+      type: 'line',
+      data: {
+        labels: ['0min','1min','2min','3min','4min','5min','6min','7min','8min','9min'],
+        datasets: [{
+          label: 'Oxigenação (%)',
+          data: [98, 97, 96, 95, 94, 93, 92, 93, 94, 95],
+          borderColor: '#FFE68F',
+          backgroundColor: '#F7F9FA',
+          fill: true,
+          tension: 0.3
+        }]
+      }
+    });
+
+    // Vibração
+    new Chart(document.getElementById('vibracaoChart'), {
+      type: 'line',
+      data: {
+        labels: ['0min','1min','2min','3min','4min','5min','6min','7min','8min','9min'],
+        datasets: [{
+          label: 'Intensidade de Vibração',
+          data: [10, 20, 40, 60, 80, 100, 90, 70, 50, 30],
+          borderColor: '#FF9F9F',
+          backgroundColor: '#FFE68F',
+          fill: true,
+          tension: 0.3
+        }]
+      }
+    });
+
+    // Pizza - Histórico de Alertas
+    new Chart(document.getElementById('pizzaChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Frequência Elevada', 'Oxigenação Baixa', 'Estresse Intenso'],
+        datasets: [{
+          data: [40, 30, 30],
+          backgroundColor: ['#7FB3FF', '#FFE68F', '#FF9F9F']
+        }]
+      }
+    });
+
+    // Mapa com Leaflet
+    const map = L.map('map').setView([-22.9099, -47.0626], 15); // Exemplo: Campinas-SP
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+    }).addTo(map);
+    L.marker([-22.9099, -47.0626]).addTo(map)
+      .bindPopup('Localização da criança')
+      .openPopup();
+  </script>
+</body>
+</html>

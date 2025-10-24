@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análise SWOT — Tech Care</title>
+  <style>
+    :root {
+      --azul-suave: #7FB3FF;
+      --amarelo-pastel: #FFE68F;
+      --coral-claro: #FF9F9F;
+      --verde-menta: #B9FBC0;
+      --branco-gelo: #F7F9FA;
+      --texto-escuro: #2D0C57;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--branco-gelo);
+      color: var(--texto-escuro);
+    }
+
+    nav {
+      background-color: var(--azul-suave);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: white;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--coral-claro);
+      margin-top: 40px;
+    }
+
+    .swot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .swot-box {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .swot-box h3 {
+      color: var(--azul-suave);
+      margin-bottom: 10px;
+    }
+
+    .swot-box ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: var(--verde-menta);
+      color: var(--texto-escuro);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Tech Care</h1>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./graphs.html">Simulações</a></li>
+      <li><a href="./membros.html">Membros</a></li>
+      <li><a href="./swot.html">SWOT</a></li>
+    </ul>
+  </nav>
+
+  <h2>Análise SWOT — Projeto NeuroBloom</h2>
+
+  <div class="swot-grid">
+    <div class="swot-box">
+      <h3>Forças</h3>
+      <ul>
+        <li>Tecnologia calmante inovadora</li>
+        <li>Materiais premium e duráveis</li>
+        <li>Foco em inclusão e bem-estar</li>
+      </ul>
+    </div>
+
+    <div class="swot-box">
+      <h3>Oportunidades</h3>
+      <ul>
+        <li>Mercado crescente de saúde e bem-estar</li>
+        <li>Parcerias com instituições de saúde e educação</li>
+        <li>Diferenciação no setor de wearables</li>
+      </ul>
+    </div>
+
+    <div class="swot-box">
+      <h3>Fraquezas</h3>
+      <ul>
+        <li>Custo de produção elevado</li>
+        <li>Produto de nicho (público restrito)</li>
+        <li>Dependência de importação de materiais</li>
+      </ul>
+    </div>
+
+    <div class="swot-box">
+      <h3>Ameaças</h3>
+      <ul>
+        <li>Concorrência de smartwatches consolidados</li>
+        <li>Barreiras de importação e taxas</li>
+        <li>Adoção lenta pelo público-alvo</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Tech Care — Estratégia com propósito e impacto social
+  </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membros — Tech Care</title>
+  <style>
+    :root {
+      --azul-suave: #7FB3FF;
+      --amarelo-pastel: #FFE68F;
+      --coral-claro: #FF9F9F;
+      --verde-menta: #B9FBC0;
+      --branco-gelo: #F7F9FA;
+      --texto-escuro: #2D0C57;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--branco-gelo);
+      color: var(--texto-escuro);
+    }
+
+    nav {
+      background-color: var(--azul-suave);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: white;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--coral-claro);
+      margin-top: 40px;
+    }
+
+    .setores {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .setor {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .setor h3 {
+      color: var(--azul-suave);
+      margin-bottom: 10px;
+    }
+
+    .setor p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .membro {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .membro img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--verde-menta);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: var(--verde-menta);
+      color: var(--texto-escuro);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Tech Care</h1>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./graphs.html">Simulações</a></li>
+      <li><a href="./membros.html">Membros</a></li>
+    </ul>
+  </nav>
+
+  <h2>Equipe Tech Care</h2>
+
+  <div class="setores">
+    <div class="setor">
+      <h3>Gestão e Liderança</h3>
+      <p>Responsáveis por coordenar o projeto, organizar tarefas e garantir que os objetivos sejam cumpridos.</p>
+      <div class="membro"><img src="isadora.jpg" alt="Isadora" /><span>Isadora — Líder</span></div>
+      <div class="membro"><img src="jacqueline.jpg" alt="Jacqueline" /><span>Jacqueline — Líder</span></div>
+      <div class="membro"><img src="isabela.jpg" alt="Isabela" /><span>Isabela — Gestão de Equipe</span></div>
+      <div class="membro"><img src="luis.jpg" alt="Luis" /><span>Luis — Gestão de Equipe</span></div>
+    </div>
+
+    <div class="setor">
+      <h3>Pesquisa e Tecnologia</h3>
+      <p>Investigam o mercado, desenvolvem o software e garantem que a pulseira funcione com precisão e segurança.</p>
+      <div class="membro"><img src="mariaeduarda.jpg" alt="Maria Eduarda" /><span>Maria Eduarda — Pesquisa de Mercado</span></div>
+      <div class="membro"><img src="joyce.jpg" alt="Joyce" /><span>Joyce — Pesquisa de Mercado</span></div>
+      <div class="membro"><img src="leonardo.jpg" alt="Leonardo" /><span>Leonardo — Pesquisa Tecnológica</span></div>
+      <div class="membro"><img src="miria.jpg" alt="Miriã" /><span>Miriã — Programação e Software</span></div>
+    </div>
+
+    <div class="setor">
+      <h3>Comunicação e Logística</h3>
+      <p>Divulgam o projeto, cuidam da identidade visual e organizam os materiais e transporte necessários.</p>
+      <div class="membro"><img src="yasmin.jpg" alt="Yasmin" /><span>Yasmin — Comunicação Visual / Marketing</span></div>
+      <div class="membro"><img src="beatriz.jpg" alt="Beatriz" /><span>Beatriz — Controle de Materiais</span></div>
+      <div class="membro"><img src="livia.jpg" alt="Livia" /><span>Livia — Transporte e Suprimentos</span></div>
+    </div>
+
+    <div class="setor">
+      <h3>Cultura e Inclusão</h3>
+      <p>Garantem que o projeto seja inclusivo, acolhedor e alinhado com os valores de diversidade e empatia.</p>
+      <div class="membro"><img src="rafaella.jpg" alt="Rafaella" /><span>Rafaella — Cultura e Inclusão</span></div>
+      <div class="membro"><img src="eduardaferreira.jpg" alt="Eduarda Ferreira" /><span>Eduarda Ferreira — Cultura e Inclusão</span></div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Tech Care — Equipe multidisciplinar por um futuro mais inclusivo
+  </footer>
+</body>
+</html>
