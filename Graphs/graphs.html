@@ -114,10 +114,10 @@
   <nav>
     <h1>Tech Care</h1>
     <ul>
-      <li><a href="../Main/index.html">Home</a></li>
+      <li><a href="/index.html">Home</a></li>
       <li><a href="../Graphs/graphs.html">Monitoramento</a></li>
       <li><a href="../Members/members.html">Membros</a></li>
-      <li><a href="../Swot/swot.html">Análise SWOT</a></li>
+      <li><a href="../Swot/swot.html">Ferramentas</a></li>
     </ul>
   </nav>
 
@@ -128,6 +128,7 @@
     <div class="chart"><canvas id="oxigenacaoChart"></canvas></div>
     <div class="chart"><canvas id="vibracaoChart"></canvas></div>
     <div class="chart"><canvas id="pizzaChart"></canvas></div>
+    <div class="chart"><canvas id="oxigenioSanguineoChart"></canvas></div>
   </div>
 
   <div id="map"></div>
@@ -144,14 +145,14 @@
   </footer>
 
   <script>
-    // Frequência Cardíaca
+    // Frequência Cardíaca ajustada
     new Chart(document.getElementById('frequenciaChart'), {
       type: 'line',
       data: {
         labels: ['0min','1min','2min','3min','4min','5min','6min','7min','8min','9min'],
         datasets: [{
           label: 'Frequência Cardíaca (bpm)',
-          data: [18, 25, 25, 18, 16, 120, 115, 105, 95, 90],
+          data: [85, 88, 90, 92, 95, 100, 98, 96, 94, 92],
           borderColor: '#7FB3FF',
           backgroundColor: '#B9FBC0',
           fill: true,
@@ -167,12 +168,36 @@
         labels: ['0min','1min','2min','3min','4min','5min','6min','7min','8min','9min'],
         datasets: [{
           label: 'Oxigenação (%)',
-          data: [98, 97, 96, 95, 94, 93, 92, 93, 94, 95],
+          data: [98, 98, 97, 97, 96, 96, 97, 98, 98, 99],
           borderColor: '#FFE68F',
           backgroundColor: '#F7F9FA',
           fill: true,
           tension: 0.3
         }]
+      }
+    });
+
+    // Novo gráfico: Oxigênio no Sangue
+    new Chart(document.getElementById('oxigenioSanguineoChart'), {
+      type: 'bar',
+      data: {
+        labels: ['0min','2min','4min','6min','8min'],
+        datasets: [{
+          label: 'Oxigênio no Sangue (%)',
+          data: [98, 97, 96, 97, 98],
+          backgroundColor: '#B9FBC0',
+          borderColor: '#7FB3FF',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 90,
+            max: 100
+          }
+        }
       }
     });
 
@@ -204,14 +229,20 @@
       }
     });
 
-    // Mapa com Leaflet
-    const map = L.map('map').setView([-22.9099, -47.0626], 15); // Exemplo: Campinas-SP
+    // Mapa com Leaflet — Rua Azárias de Melo, 432 (Campinas-SP)
+     document.addEventListener("DOMContentLoaded", function () {
+    const map = L.map('map').setView([-22.90284, -47.06023], 19);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap',
     }).addTo(map);
-    L.marker([-22.9099, -47.0626]).addTo(map)
-      .bindPopup('Localização da criança')
+
+    L.marker([-22.90284, -47.06023]).addTo(map)
+      .bindPopup('Rua Azárias de Melo, 432 — Localização da criança')
       .openPopup();
+  });
+
+    
   </script>
 </body>
 </html>
